@@ -37,8 +37,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h1>Новая статья</h1>
-
-            <form action="index.php" method="POST">
+            <form action="catcher.php" method="POST">
                 <div class="form-group">
                     <label>Заголовок</label>
                     <input name="title" type="text" class="form-control" placeholder="Введите заголовок вашей статьи">
