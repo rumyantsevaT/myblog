@@ -10,8 +10,8 @@
 //$statement = $pdo->prepare("INSERT INTO posts (title, text) VALUES (:title, :text)");
 //$statement->bindValue(":title", $_POST['title']);
 //$statement->bindValue(":text", $_POST['text']);
-//$statement->execute();
-//$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+//$result = $statement->execute();
+//$statement->fetchAll(PDO::FETCH_ASSOC);
 //
 //var_dump($result);
 //header("Location: /index.php");exit;
