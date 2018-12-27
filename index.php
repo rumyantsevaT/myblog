@@ -1,10 +1,12 @@
 <?php
+// Список постов
 var_dump($_POST);
 
 $pdo = new PDO("mysql:host = localhost; dbname = posts", "root", "root");
-$statement = $pdo->prepare("SELECT * FROM posts");
+$sql = "SELECT * FROM posts";
+$statement = $pdo->prepare($sql);
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-var_dump($result);
+//var_dump($result);
 ?>
 
 <!doctype html>
@@ -32,10 +34,16 @@ var_dump($result);
                     <a class="nav-link" href="/myblog.loc">Новости<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="new-post.php">Написать статью</a>
+                    <a class="nav-link" href="create.php">Написать статью</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Отредактировать статью</a>
+                    <a class="nav-link" href="update.php">Обновить статью</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="edit.php">Редактировать статью</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="delete.php">Удалить статью</a>
                 </li>
             </ul>
             <span class="navbar-text"><button type="button" class="btn btn-outline-light">Регистрация</button></span>
