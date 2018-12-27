@@ -1,12 +1,13 @@
 <?php
 // Список постов
 var_dump($_POST);
-
-$pdo = new PDO("mysql:host = localhost; dbname = posts", "root", "root");
+//
+$pdo = new PDO("mysql:host = localhost; dbname = myblog.loc", "root", "root");
 $sql = "SELECT * FROM posts";
 $statement = $pdo->prepare($sql);
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-//var_dump($result);
+var_dump($result);
+
 ?>
 
 <!doctype html>
@@ -24,7 +25,7 @@ $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="/myblog.loc">Rumyantseva-blog</a>
+        <a class="navbar-brand" href="/">Rumyantseva-blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
