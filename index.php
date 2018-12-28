@@ -1,12 +1,19 @@
 <?php
+//$posts = [
+//	[
+//		"id" => 10,
+//		"title" => "djflsjflsjfs",
+//		"text" => "оавлдоадыоад"
+//	],
+//]
+
 // Список постов
-var_dump($_POST);
-//
-$pdo = new PDO("mysql:host = localhost; dbname = myblog.loc", "root", "root");
-$sql = "SELECT * FROM posts";
-$statement = $pdo->prepare($sql);
-$result = $statement->fetchAll(PDO::FETCH_ASSOC);
-var_dump($result);
+//var_dump($_POST);
+$pdo = new PDO("mysql:host=localhost;dbname=myblog.loc", "root", "root");
+//$sql = "SELECT * FROM posts";
+$statement = $pdo->prepare("SELECT * FROM posts");
+$result = $statement->execute();
+$statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
@@ -58,16 +65,18 @@ var_dump($result);
         </div>
     </div>
     <div class="row">
+		<?php foreach ($posts as $post):?>
         <div class="col-12 col-md-4">
             <div class="jumbotron">
-                <h1 class="display-4"><?=$_POST["title"];?></h1>
-                <p class="lead"><?=$_POST["text"];?></p>
+                <h1 class="display-4"><?=$post["title"];?></h1>
+                <p class="lead"><?=$post["text"];?></p>
                 <hr class="my-4">
                 <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
                 <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </div>
         </div>
-        <!-- /.col-12 col-md-4 -->
+		<?php endforeach; ?>
+		<!-- /.col-12 col-md-4 -->
         <div class="col-12 col-md-4">
             <div class="jumbotron">
                 <h1 class="display-4">Hello, world!</h1>
