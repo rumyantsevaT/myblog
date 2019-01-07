@@ -65,3 +65,11 @@ h2 {
 
     color: #028b8b;
 }
+
+.img-wrap img {
+    max-width: 100%;
+}
+
+.itemlist {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
