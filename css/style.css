@@ -1,7 +1,42 @@
+@font-face:{
+    font-family: 'lasco';
+    src: url('../fonts/Lasco.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-size: 16px;
+    /*font-family: 'Lasco', sans-serif;*/
+}
+h2 {
+    font-size: 3.8rem;
+}
+.bg-nav {
+    background-color: #028b8b;
+}
+
+
 .login-page .form-outer, .register-page .form-outer {
     min-height: 100vh;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px 0;
     position: relative;
+}
+
+.section-main {
+    background: url(../images/stuf-puppy-transp.png);
+    background-color: #f7f5f8;
+    /*background-size: cover;*/
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    padding: 4% 0;
+    height: 60vh;
+    min-height: 500px;
+}
+
+.section-main h2 span {
+
+    color: #028b8b;
 }
