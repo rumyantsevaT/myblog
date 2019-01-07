@@ -1,22 +1,45 @@
 @font-face:{
-    font-family: 'lasco';
-    src: url('../fonts/Lasco.ttf');
+    font-family: 'lasco-regular';
+    src: url('../fonts/lasco.otf');
     font-weight: 400;
+    font-style: normal;
+
+    font-family: 'lasco-bold';
+    src: url('../fonts/lasco.otf');
+    font-weight: 800;
     font-style: normal;
 }
 
 body {
+    font-family: 'lasco-regular', sans-serif;
     font-size: 16px;
+    line-height: 1.4;
     /*font-family: 'Lasco', sans-serif;*/
 }
 h2 {
     font-size: 3.8rem;
 }
-.bg-nav {
+.bg-nav-custom {
     background-color: #028b8b;
 }
-
-
+.navbar-brand-custom {
+    color: #fff;
+    border-right: 1px solid #f1c198;
+    padding: 0 1rem 0 0;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.btn-outline-custom {
+    color: #fff;
+    background-color: transparent;
+    background-image: none;
+    border-color: #f1c198;
+}
+.btn-custom {
+    color: #fff;
+    background-color: #028b8b;
+    border-color: #028b8b;
+}
 .login-page .form-outer, .register-page .form-outer {
     min-height: 100vh;
     max-width: 600px;
@@ -24,16 +47,18 @@ h2 {
     padding: 20px 0;
     position: relative;
 }
-
+.section {
+    padding: 4% 0;
+    min-height: 500px;
+    font-family: "lasco-bold";
+}
 .section-main {
     background: url(../images/stuf-puppy-transp.png);
     background-color: #f7f5f8;
     /*background-size: cover;*/
     background-repeat: no-repeat;
     background-position: 50% 100%;
-    padding: 4% 0;
     height: 60vh;
-    min-height: 500px;
 }
 
 .section-main h2 span {
