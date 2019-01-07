@@ -39,10 +39,10 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="create.php">Добавить породу</a>
-                        <a class="dropdown-item" href="#">Редактировать породу</a>
-                        <a class="dropdown-item" href="#">Обновить породу</a>
+                        <a class="dropdown-item" href="edit.php">Редактировать породу</a>
+                        <a class="dropdown-item" href="update.php">Обновить породу</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Удалить породу</a>
+                        <a class="dropdown-item" href="delete.php">Удалить породу</a>
                     </div>
                 </li>
             </ul>
