@@ -16,6 +16,9 @@ body {
     line-height: 1.4;
     /*font-family: 'Lasco', sans-serif;*/
 }
+a {
+    color: #028b8b;
+}
 h2 {
     font-size: 3.8rem;
 }
@@ -71,5 +74,16 @@ h2 {
 }
 
 .itemlist {
-    padding: 20px;
-    border-bottom: 1px solid #eee;
+    padding: 1rem;
+    /*border-bottom: 1px solid #eee;*/
+}
+
+.card-header h5.title {
+    margin-bottom: 0 !important;
+}
+
+.footer {
+    padding: 1% 0;
+    min-height: 200px;
+    background: #f7f5f8;
+}
