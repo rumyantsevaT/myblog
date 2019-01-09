@@ -1,13 +1,12 @@
 <?php
 // Список постов
 	//var_dump($_POST);
-	$pdo = new PDO("mysql:host=localhost;dbname=myblog.loc", "root", "root");
+	$pdo = new PDO("mysql:host=localhost; dbname=myblog.loc", "root", "root");
 	$sql = "SELECT * FROM breeds";
 	$statement = $pdo->prepare($sql);
-	$result = $statement->execute();
-	$statement->fetchAll(PDO::FETCH_ASSOC);
-	$posts = $statement;
-	var_dump($posts);
+	$statement->execute();
+	$breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
+//	var_dump($breeds);die;
 ?>
 
 <!doctype html>
@@ -29,7 +28,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav-custom sticky-top">
     <div class="container">
-        <a class="navbar-brand navbar-brand-custom" href="/">Rumyantseva-blog</a>
+        <a class="navbar-brand navbar-brand-custom" href="/myblog.loc">Rumyantseva-blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -101,6 +100,7 @@
 			<!-- /.col-md-3 -->
 			<div class="col-md-9">
 			<!--карточка -->
+				<?php foreach ($breeds as $breed):?>
 				<div class="card mb-4">
 					<article class="itemlist">
 						<div class="row row-sm">
@@ -109,17 +109,17 @@
 							</aside> <!-- col.// -->
 							<div class="col-sm-7">
 								<div class="text-wrap">
-									<h4 class="title">Мини бультерьер  </h4>
-									<p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam </p>
+									<h4 class="title"><?= $breed['title']?></h4>
+									<p><?= $breed['content']?></p>
 									<p class="rating-wrap my-3 text-muted">
 										<span class="label-rating"><i class="far fa-clock mr-1"></i>03.01.019</span>
 										<span class="label-rating">|</span>
 										<span class="label-rating"><i class="far fa-user mr-1"></i>Татьяна</span>
 									</p> <!-- rating-wrap.// -->
 									<p>
-										<a href="#" class="btn btn-custom"> Подробнее  </a>
-										<a href="#" class="btn btn-warning"> Редактировать </a>
-										<a href="#" class="btn btn-danger"> Удалить  </a>
+										<a href="/myblog.loc/details.php" class="btn btn-custom"> Подробнее  </a>
+										<a href="/myblog.loc/edit.php" class="btn btn-warning"> Редактировать </a>
+										<a href="/myblog.loc/delete.php" class="btn btn-danger"> Удалить  </a>
 									</p>
 									<p><a href="#"><i class="fa fa-heart"></i> Добавить в избранные</a></p>
 									<div class="border-top pt-3">
@@ -134,6 +134,7 @@
 						</div> <!-- row.// -->
 					</article> <!-- itemlist.// -->
 				</div> <!-- card.// -->
+				<?php endforeach;?>
 			</div>
 			<!-- /.col-md-9 -->
 		</div>

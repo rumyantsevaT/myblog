@@ -17,7 +17,7 @@
 <!--header navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav-custom sticky-top">
 	<div class="container">
-		<a class="navbar-brand navbar-brand-custom" href="/">Rumyantseva-blog</a>
+		<a class="navbar-brand navbar-brand-custom" href="/myblog.loc">Rumyantseva-blog</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -47,9 +47,28 @@
 <div class="section">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
-				<h1>Мини бультерьер</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, est!</p>
+			<div class="col-md-6">
+				<div class="img-wrap">
+					<img src="images/items/bull-terrier-red500.jpg" alt="">
+				</div>
+				<!-- /.img-wrap -->
+			</div>
+
+			<div class="col-md-6">
+				<h1><?= $breed["title"]?></h1>
+				<p><?= $breed["content"]?></p>
+
+			</div>
+			<!-- /.col-md-6 -->
+		</div>
+		<!-- /.row -->
+		<div class="row">
+			<div class="col-12">
+				<a class="btn btn-custom" href="/myblog.loc">На главную</a>
+			</div>
+		</div>
+		<!--.row-->
+			
 			</div>
 		</div>
 	</div>

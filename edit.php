@@ -1,3 +1,7 @@
+<?php
+//$sql = "UPDATE FROM breeds WHERE id=$_GET['id'];
+?>
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -52,7 +56,7 @@
 				<form action="catcher.php" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
 						<label>Название породы</label>
-						<input name="title" type="text" class="form-control" placeholder="Введите правильное название породы">
+						<input name="title" type="text" class="form-control" placeholder=" Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150">
 					</div>
 					<div class="form-group">
 						<label>Описание</label>

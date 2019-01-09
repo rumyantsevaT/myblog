@@ -17,7 +17,7 @@
 <!--header navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav-custom sticky-top">
 	<div class="container">
-		<a class="navbar-brand navbar-brand-custom" href="/">Rumyantseva-blog</a>
+		<a class="navbar-brand navbar-brand-custom" href="/myblog.loc">Rumyantseva-blog</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -49,24 +49,24 @@
         <div class="row">
             <div class="col-md-12">
                 <h1>Добавить породу собаки</h1>
-                <form action="catcher.php" method="POST" enctype="multipart/form-data">
+                <form action="catcher.php" method="POST">
                     <div class="form-group">
                         <label>Заголовок</label>
                         <input name="title" type="text" class="form-control" placeholder="Введите название породы">
                     </div>
                     <div class="form-group">
                         <label>Описание</label>
-                        <textarea name="text" class="form-control" placeholder="Опишите особенности породы"></textarea>
+                        <textarea name="content" class="form-control" placeholder="Опишите особенности породы"></textarea>
                     </div>
-	                <div class="input-group mb-3">
-		                <div class="custom-file">
-			                <input type="file" class="custom-file-input" id="inputGroupFile02">
-			                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Добавить изображение</label>
-		                </div>
-		                <div class="input-group-append">
-			                <span class="input-group-text" id="inputGroupFileAddon02">Загрузить</span>
-		                </div>
-	                </div>
+<!--	                <div class="input-group mb-3">-->
+<!--		                <div class="custom-file">-->
+<!--			                <input type="file" class="custom-file-input" id="inputGroupFile02">-->
+<!--			                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Добавить изображение</label>-->
+<!--		                </div>-->
+<!--		                <div class="input-group-append">-->
+<!--			                <span class="input-group-text" id="inputGroupFileAddon02">Загрузить</span>-->
+<!--		                </div>-->
+<!--	                </div>-->
                     <button type="submit" class="btn btn-custom">Отправить</button>
                 </form>
             </div>
