@@ -1,5 +1,10 @@
 <?php
-//$sql = "UPDATE FROM breeds WHERE id=$_GET['id'];
+$pdo = new PDO("mysql:host=localhost; dbname=myblog.loc", "root", "root");
+$statement = $pdo->prepare("SELECT * FROM breeds WHERE id=:id");
+$statement->bindParam(":id", $_GET['id']);
+$statement->execute();
+$breed = $statement->fetch(PDO::FETCH_ASSOC);
+//var_dump($breed['content']);
 ?>
 
 <!doctype html>
@@ -21,7 +26,7 @@
 <!--header navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav-custom sticky-top">
 	<div class="container">
-		<a class="navbar-brand navbar-brand-custom" href="/">Rumyantseva-blog</a>
+		<a class="navbar-brand navbar-brand-custom" href="/myblog.loc">Rumyantseva-blog</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -48,29 +53,30 @@
 		<span class="navbar-text ml-lg-2"><button type="button" class="btn btn-outline-light">Регистрация</button></span>
 	</div><!-- /.container -->
 </nav>
-<div class="section">
+<div class="section py-5">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Редактировать породу собаки</h1>
-				<form action="catcher.php" method="POST" enctype="multipart/form-data">
+				<form action="update.php?id=<?= $breed['id'];?>" method="POST">
+<!--					<input type="text" name="id" value="--><?//= $breed['id'];?><!--">-->
 					<div class="form-group">
 						<label>Название породы</label>
-						<input name="title" type="text" class="form-control" placeholder=" Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150Lorem150">
+						<input name="title" type="text" class="form-control" value="<?= $breed['title'];?>">
 					</div>
 					<div class="form-group">
 						<label>Описание</label>
-						<textarea name="text" class="form-control" placeholder="Опишите особенности породы"></textarea>
+						<textarea name="content" class="form-control" placeholder="Описание породы"><?= $breed['content']?></textarea>
 					</div>
-					<div class="input-group mb-3">
-						<div class="custom-file">
-							<input type="file" class="custom-file-input" id="inputGroupFile02">
-							<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Добавить изображение</label>
-						</div>
-						<div class="input-group-append">
-							<span class="input-group-text" id="inputGroupFileAddon02">Загрузить</span>
-						</div>
-					</div>
+<!--					<div class="input-group mb-3">-->
+<!--						<div class="custom-file">-->
+<!--							<input type="file" class="custom-file-input" id="inputGroupFile02">-->
+<!--							<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Добавить изображение</label>-->
+<!--						</div>-->
+<!--						<div class="input-group-append">-->
+<!--							<span class="input-group-text" id="inputGroupFileAddon02">Загрузить</span>-->
+<!--						</div>-->
+<!--					</div>-->
 					<button type="submit" class="btn btn-warning">Подтвердить изменение</button>
 				</form>
 			</div>

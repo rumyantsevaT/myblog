@@ -1,11 +1,11 @@
 <?php
 // Список постов
-	//var_dump($_POST);
-	$pdo = new PDO("mysql:host=localhost; dbname=myblog.loc", "root", "root");
-	$sql = "SELECT * FROM breeds";
-	$statement = $pdo->prepare($sql);
-	$statement->execute();
-	$breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
+//var_dump($_POST);
+$pdo = new PDO("mysql:host=localhost; dbname=myblog.loc", "root", "root");
+$sql = "SELECT * FROM breeds";
+$statement = $pdo->prepare($sql);
+$statement->execute();
+$breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 //	var_dump($breeds);die;
 ?>
 
@@ -66,7 +66,7 @@
     </div>
 </div>
 <!--Второй экран-->
-<div class="section">
+<div class="section py-5">
 	<div class="container">
 		<div class="row justify-content-between">
 			<div class="col-4">
@@ -81,8 +81,8 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3">
-				<div class="card">
+			<div class="col-lg-3">
+				<div class="card mb-3">
 					<article class="card-group-item">
 						<header class="card-header"><h5 class="title">Размер породы</h5></header>
 						<div class="filter-content">
@@ -98,7 +98,7 @@
 				</div>
 			</div>
 			<!-- /.col-md-3 -->
-			<div class="col-md-9">
+			<div class="col-lg-9">
 			<!--карточка -->
 				<?php foreach ($breeds as $breed):?>
 				<div class="card mb-4">
@@ -117,9 +117,9 @@
 										<span class="label-rating"><i class="far fa-user mr-1"></i>Татьяна</span>
 									</p> <!-- rating-wrap.// -->
 									<p>
-										<a href="/myblog.loc/details.php" class="btn btn-custom"> Подробнее  </a>
-										<a href="/myblog.loc/edit.php" class="btn btn-warning"> Редактировать </a>
-										<a href="/myblog.loc/delete.php" class="btn btn-danger"> Удалить  </a>
+										<a href="/myblog.loc/details.php?id=<?= $breed['id'];?>" class="btn btn-custom"> Подробнее  </a>
+										<a href="/myblog.loc/edit.php?id=<?= $breed['id'];?>" class="btn btn-warning"> Редактировать </a>
+										<a href="/myblog.loc/delete.php?id=<?= $breed['id'];?>" class="btn btn-danger"> Удалить  </a>
 									</p>
 									<p><a href="#"><i class="fa fa-heart"></i> Добавить в избранные</a></p>
 									<div class="border-top pt-3">

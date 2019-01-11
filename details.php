@@ -1,3 +1,14 @@
+<?php
+
+$pdo = new PDO ("mysql:host=localhost;dbname=myblog.loc", "root", "root");
+//$sql = "SELECT * FROM breeds WHERE id=:id";
+$statement = $pdo->prepare("SELECT * FROM breeds WHERE id=:id");
+$statement->bindParam(":id", $_GET['id']);
+$statement->execute();
+$breed = $statement->fetch(PDO::FETCH_ASSOC);
+//var_dump($result);
+
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -44,7 +55,7 @@
 		<span class="navbar-text ml-lg-2"><button type="button" class="btn btn-outline-light">Регистрация</button></span>
 	</div><!-- /.container -->
 </nav>
-<div class="section">
+<div class="section pt-4">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">

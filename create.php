@@ -44,34 +44,34 @@
 		<span class="navbar-text ml-lg-2"><button type="button" class="btn btn-outline-light">Регистрация</button></span>
 	</div><!-- /.container -->
 </nav>
-<div class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Добавить породу собаки</h1>
-                <form action="catcher.php" method="POST">
-                    <div class="form-group">
-                        <label>Заголовок</label>
-                        <input name="title" type="text" class="form-control" placeholder="Введите название породы">
-                    </div>
-                    <div class="form-group">
-                        <label>Описание</label>
-                        <textarea name="content" class="form-control" placeholder="Опишите особенности породы"></textarea>
-                    </div>
-<!--	                <div class="input-group mb-3">-->
-<!--		                <div class="custom-file">-->
-<!--			                <input type="file" class="custom-file-input" id="inputGroupFile02">-->
-<!--			                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Добавить изображение</label>-->
-<!--		                </div>-->
-<!--		                <div class="input-group-append">-->
-<!--			                <span class="input-group-text" id="inputGroupFileAddon02">Загрузить</span>-->
-<!--		                </div>-->
-<!--	                </div>-->
-                    <button type="submit" class="btn btn-custom">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </div>
+<div class="section py-5">
+	<div class="container">
+		<div class="row">
+				<div class="col-md-12">
+					<h1>Добавить породу собаки</h1>
+					<form action="catcher.php" method="POST">
+						<div class="form-group">
+							<label>Заголовок</label>
+						<input name="title" type="text" class="form-control" placeholder="Введите название породы">
+						</div>
+						<div class="form-group">
+							<label>Описание</label>
+						<textarea name="content" class="form-control" placeholder="Опишите особенности породы"></textarea>
+						</div>
+						<div class="input-group mb-3">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="inputGroupFile02">
+							<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Добавить изображение</label>
+							</div>
+							<div class="input-group-append">
+								<span class="input-group-text" id="inputGroupFileAddon02">Загрузить</span>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-custom">Отправить</button>
+					</form>
+				</div>
+			</div>
+	</div>
 </div>
 <!-- /.section -->
 
