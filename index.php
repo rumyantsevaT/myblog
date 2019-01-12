@@ -1,7 +1,7 @@
 <?php
 // Список постов
 //var_dump($_POST);
-$pdo = new PDO("mysql:host=localhost; dbname=myblog.loc", "root", "root");
+$pdo = new PDO("mysql:host=localhost;dbname=myblog.loc;charset=utf8", "root", "root");
 $sql = "SELECT * FROM breeds";
 $statement = $pdo->prepare($sql);
 $statement->execute();
@@ -105,14 +105,16 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 					<article class="itemlist">
 						<div class="row row-sm">
 							<aside class="col-sm-5">
-								<div class="img-wrap"><img src="images/items/bull-terrier-red500.jpg" class="img-md"></div>
+								<div class="img-wrap">
+									<img src="images/items/bull-terrier-red500.jpg" class="img-md">
+								</div>
 							</aside> <!-- col.// -->
 							<div class="col-sm-7">
 								<div class="text-wrap">
 									<h4 class="title"><?= $breed['title']?></h4>
 									<p><?= $breed['content']?></p>
 									<p class="rating-wrap my-3 text-muted">
-										<span class="label-rating"><i class="far fa-clock mr-1"></i>03.01.019</span>
+										<span class="label-rating"><i class="far fa-clock mr-1"></i><?= $breed['date']?></span>
 										<span class="label-rating">|</span>
 										<span class="label-rating"><i class="far fa-user mr-1"></i>Татьяна</span>
 									</p> <!-- rating-wrap.// -->

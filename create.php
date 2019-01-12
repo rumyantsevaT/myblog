@@ -49,7 +49,7 @@
 		<div class="row">
 				<div class="col-md-12">
 					<h1>Добавить породу собаки</h1>
-					<form action="catcher.php" method="POST">
+					<form action="catcher.php" method="POST" enctype="multipart/form-data">
 						<div class="form-group">
 							<label>Заголовок</label>
 						<input name="title" type="text" class="form-control" placeholder="Введите название породы">
@@ -60,11 +60,8 @@
 						</div>
 						<div class="input-group mb-3">
 							<div class="custom-file">
-								<input type="file" class="custom-file-input" id="inputGroupFile02">
-							<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Добавить изображение</label>
-							</div>
-							<div class="input-group-append">
-								<span class="input-group-text" id="inputGroupFileAddon02">Загрузить</span>
+								<input type="file" name="image" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+								<label class="custom-file-label" for="inputGroupFile04">Выберите файл</label>
 							</div>
 						</div>
 						<button type="submit" class="btn btn-custom">Отправить</button>
