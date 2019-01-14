@@ -1,6 +1,6 @@
 <?php
 
-$pdo = new PDO ("mysql:host=localhost;dbname=myblog.loc", "root", "root");
+$pdo = new PDO ("mysql:host=localhost;dbname=myblog.loc;charset=utf8", "root", "root");
 //$sql = "SELECT * FROM breeds WHERE id=:id";
 $statement = $pdo->prepare("SELECT * FROM breeds WHERE id=:id");
 $statement->bindParam(":id", $_GET['id']);

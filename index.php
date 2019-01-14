@@ -6,7 +6,8 @@ $sql = "SELECT * FROM breeds";
 $statement = $pdo->prepare($sql);
 $statement->execute();
 $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
-//	var_dump($breeds);die;
+
+//var_dump($name_img);die;
 ?>
 
 <!doctype html>
@@ -106,7 +107,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 						<div class="row row-sm">
 							<aside class="col-sm-5">
 								<div class="img-wrap">
-									<img src="images/items/bull-terrier-red500.jpg" class="img-md">
+									<img class="img-md" src="uploads/<?= $name_img;?>">
 								</div>
 							</aside> <!-- col.// -->
 							<div class="col-sm-7">
