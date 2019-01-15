@@ -107,7 +107,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 						<div class="row row-sm">
 							<aside class="col-sm-5">
 								<div class="img-wrap">
-									<img class="img-md" src="uploads/<?= $name_img;?>">
+									<img class="img-md" src="uploads/<?= $breed['image'];?>">
 								</div>
 							</aside> <!-- col.// -->
 							<div class="col-sm-7">

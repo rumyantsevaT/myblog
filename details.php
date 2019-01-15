@@ -60,7 +60,7 @@ $breed = $statement->fetch(PDO::FETCH_ASSOC);
 		<div class="row">
 			<div class="col-md-6">
 				<div class="img-wrap">
-					<img src="images/items/bull-terrier-red500.jpg" alt="">
+					<img src="uploads/<?= $breed['image'];?>" alt="">
 				</div>
 				<!-- /.img-wrap -->
 			</div>
