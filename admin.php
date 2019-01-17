@@ -1,15 +1,6 @@
 <?php
-// Список постов
-//var_dump($_POST);
-$pdo = new PDO("mysql:host=localhost;dbname=myblog.loc;charset=utf8", "root", "root");
-$sql = "SELECT * FROM breeds";
-$statement = $pdo->prepare($sql);
-$statement->execute();
-$breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-//var_dump($name_img);die;
 ?>
-
 <!doctype html>
 <html lang="ru">
 <head>
@@ -20,7 +11,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 	<!-- Bootstrap CSS 4.1.3-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+
     <!--    Custom style-->
     <link rel="stylesheet" href="css/style.css">
 	<!--	fontawesome-->
@@ -53,7 +44,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
             <input class="form-control mr-sm-2" type="search" placeholder="Поиск породы" aria-label="Search">
             <button class="btn btn-outline-success btn-outline-custom my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
         </form>
-        <span class="navbar-text ml-lg-2"><button type="button" class="btn btn-outline-light"><a href="login.php">Регистрация</a></button></span>
+        <span class="navbar-text ml-lg-2"><button type="button" class="btn btn-outline-light">Регистрация</button></span>
     </div><!-- /.container -->
 </nav>
 <!--Первый экран-->
@@ -71,7 +62,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 	<div class="container">
 		<div class="row justify-content-between">
 			<div class="col-4">
-				<h1 class="d-inline">Все породы</h1>
+				<h1 class="d-inline">Админ панель</h1>
 			</div>
 			<div class="col-4 align-self-end text-right">
 				<a class="btn btn-custom" href="create.php">Добавить породу</a>
@@ -79,7 +70,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 		</div>
 		<hr class="my-4">
 	</div>
-	
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
@@ -88,11 +79,11 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 						<header class="card-header"><h5 class="title">Размер породы</h5></header>
 						<div class="filter-content">
 							<div class="list-group list-group-flush">
-								<a href="#" class="list-group-item">Гигантская <span class="float-right badge badge-secondary round">142</span> </a>
-								<a href="#" class="list-group-item">Большая <span class="float-right badge badge-secondary round">3</span>  </a>
-								<a href="#" class="list-group-item">Средняя <span class="float-right badge badge-secondary round">32</span>  </a>
-								<a href="#" class="list-group-item">Маленькая <span class="float-right badge badge-secondary round">12</span>  </a>
-								<a href="#" class="list-group-item">Микро <span class="float-right badge badge-secondary round">12</span>  </a>
+								<a href="#" class="list-group-item">1 <span class="float-right badge badge-secondary round">142</span> </a>
+								<a href="#" class="list-group-item">2 <span class="float-right badge badge-secondary round">3</span>  </a>
+								<a href="#" class="list-group-item">3<span class="float-right badge badge-secondary round">32</span>  </a>
+								<a href="#" class="list-group-item">4<span class="float-right badge badge-secondary round">12</span>  </a>
+								<a href="#" class="list-group-item">5<span class="float-right badge badge-secondary round">12</span>  </a>
 							</div>  <!-- list-group .// -->
 						</div>
 					</article> <!-- card-group-item.// -->
@@ -133,7 +124,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 									</div> <!-- action-wrap.// -->
 								</div> <!-- text-wrap.// -->
 							</div> <!-- col.// -->
-							
+
 						</div> <!-- row.// -->
 					</article> <!-- itemlist.// -->
 				</div> <!-- card.// -->
@@ -197,4 +188,4 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 </footer>
 <!-- /.footer -->
 </body>
-</html>
+</html

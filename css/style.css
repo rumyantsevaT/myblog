@@ -84,3 +84,8 @@ h2 {
 	min-height: 200px;
 	background: #f7f5f8;
 }
+
+.form-wrap {
+	width: 50%;
+	margin: auto;
+}
