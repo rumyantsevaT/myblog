@@ -6,5 +6,5 @@ $statement = $pdo->prepare($sql);
 $statement->bindParam(":id", $_GET['id']);
 $statement->execute();
 
-header("Location: /myblog.loc"); exit;
+header("Location: /"); exit;
 ?>

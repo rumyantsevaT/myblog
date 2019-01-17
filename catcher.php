@@ -30,4 +30,4 @@ function uploadImage($image_file){
 
 uploadImage($_FILES['image']);
 
-header("Location: /myblog.loc");
+header("Location: /");
