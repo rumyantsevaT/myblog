@@ -1,5 +1,9 @@
 <?php
+session_start();
+setcookie('login', 'admin');
+echo $_SESSION['name'];
 
+var_dump($_COOKIE);
 ?>
 <!doctype html>
 <html lang="ru">
@@ -44,7 +48,7 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Поиск породы" aria-label="Search">
             <button class="btn btn-outline-success btn-outline-custom my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
         </form>
-        <span class="navbar-text ml-lg-2"><button type="button" class="btn btn-outline-light">Регистрация</button></span>
+        <span class="navbar-text ml-lg-2"><button type="button" class="btn btn-outline-light">Logout</button></span>
     </div><!-- /.container -->
 </nav>
 <!--Первый экран-->

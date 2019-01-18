@@ -1,3 +1,8 @@
+<?php
+session_start();
+setcookie("login", "admin");
+?>
+
 <!doctype html>
 <html lang="ru">
 <head>
@@ -48,23 +53,27 @@
 	<div class="container">
 		<div class="form-wrap">
 			<h1>Вход в личный кабинет</h1>
-			<form class="m-auto" method="get">
+			<form class="m-auto" method="post">
 				<div class="form-group">
-					<label for="exampleInputEmail1">Email address</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-					<small id="emailHelp" class="form-text text-muted">Мы не передает вашу личную информацию третьим лицам.</small>
+					<label for="inputName">Имя</label>
+					<input type="text" name="name" class="form-control" id="inputName" placeholder="Как к вам обращаться?">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email </label>
+					<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите Ваш email">
+					<small id="emailHelp" class="form-text text-muted">Мы не передаем вашу личную информацию третьим лицам.</small>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputPassword1">Password</label>
-					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+					<input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Придумайте пароль до 8 символов">
 				</div>
 				<div class="form-group form-check">
 					<input type="checkbox" class="form-check-input" id="exampleCheck1">
 					<label class="form-check-label" for="exampleCheck1">Check me out</label>
 				</div>
-				<button type="submit" class="btn btn-primary">Login</button>
+				<button type="submit" class="btn btn-custom">Login</button>
 			</form>
-			<a href="#" class="forgot-pass">Забыли пароль?</a><small>Нет аккаунта? </small><a href="register.html" class="signup">Регистрация</a>
+			<p class="mt-3"><a href="#" class="forgot-pass">Забыли пароль?</a><small>Нет аккаунта? </small><a href="register.html" class="signup">Регистрация</a></p>
 		</div>
 		<!-- /.form-wrap -->
 	</div>
