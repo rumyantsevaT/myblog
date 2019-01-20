@@ -1,6 +1,12 @@
 <?php
 session_start();
-setcookie("login", "admin");
+
+if(isset($_POST['name']) && (!empty($_POST['name']))) {
+	$name = $_POST['name'];
+	setcookie('name', $name);
+} else {
+	$name = 'Гость';
+}
 ?>
 
 <!doctype html>
@@ -53,6 +59,7 @@ setcookie("login", "admin");
 	<div class="container">
 		<div class="form-wrap">
 			<h1>Вход в личный кабинет</h1>
+			<p>Привет, <?= $name;?></p>
 			<form class="m-auto" method="post">
 				<div class="form-group">
 					<label for="inputName">Имя</label>
