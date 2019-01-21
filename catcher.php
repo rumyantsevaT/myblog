@@ -1,8 +1,4 @@
 <?php
-//отловить $_FILES переданные данные
-//var_dump($_FILES['image']['tmp_name']) . '\n';
-//var_dump($_FILES['image']['name']);die;
-
 //try {
 //	$pdo = new PDO("mysql:host=localhost;dbname=myblog.loc;charset=utf8", "root", "root");
 //	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -30,4 +26,4 @@ function uploadImage($image_file){
 
 uploadImage($_FILES['image']);
 
-header("Location: /myblog.loc");
+header("Location: /");

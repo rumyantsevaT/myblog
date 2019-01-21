@@ -26,14 +26,14 @@ $breed = $statement->fetch(PDO::FETCH_ASSOC);
 <!--header navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav-custom sticky-top">
 	<div class="container">
-		<a class="navbar-brand navbar-brand-custom" href="/myblog.loc">Rumyantseva-blog</a>
+		<a class="navbar-brand navbar-brand-custom" href="/">Rumyantseva-blog</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarText">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item dropdown active">
-					<a class="nav-link dropdown-toggle" href="/myblog.loc" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Все породы собак<span class="sr-only">(current)</span>
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">

@@ -8,6 +8,5 @@ $statement->bindParam(":title" , $_POST['title']);
 $statement->bindParam(":content", $_POST['content']);
 $statement->execute();
 
-header("Location: /myblog.loc");exit;
-//var_dump($statement);
+header("Location: /");
 ?>
