@@ -1,35 +1,43 @@
 <?php
-// Список постов
-//var_dump($_POST);
+//личный кабинет где выводятся все посты одного автора (того кто залогинился)
+
 //$pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
 require_once "pdo-db.php";
-$sql = "SELECT * FROM breeds";
-$statement = $pdo->prepare($sql);
-$statement->execute();
-$breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-//var_dump($name_img);die;
+//$sql = "SELECT * FROM breeds WHERE id=:id";
+//$statement = $pdo->prepare("INSERT INTO users (name, password) VALUE (:name, :password"));
 ?>
-
 <!doctype html>
 <html lang="ru">
 <!--head-->
 <?php include "./web/head.html"; ?>
 <body>
 <!--навигация-->
-<?php include "web/nav.html"; ?>
+<?php include "web/nav-logout.html"; ?>
 
 <!--Первый экран-->
-<div class="section section-main">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="text-sm-left text-lg-center">В настоящее время в мире насчитывается около <span>500 пород</span> собак</h2>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="section section-main">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-12">-->
+<!--                <h2 class="text-sm-left text-lg-center">В настоящее время в мире насчитывается около <span>500 пород</span> собак</h2>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <!--Второй экран-->
+<div class="section py-5">
+	<div class="container">
+		<div class="row justify-content-between">
+			<div class="col-4">
+				<h1 class="d-inline"><p>Привет, <?= $name;?></p></h1>
+			</div>
+			<div class="col-4 align-self-end text-right">
+				<a class="btn btn-custom" href="create.php">Добавить породу</a>
+			</div>
+		</div>
+		<hr class="my-4">
+	</div>
+
 <div class="section py-5">
 	<div class="container">
 		<div class="row justify-content-between">
@@ -42,7 +50,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 		</div>
 		<hr class="my-4">
 	</div>
-	
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
@@ -89,7 +97,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 									</div> <!-- action-wrap.// -->
 								</div> <!-- text-wrap.// -->
 							</div> <!-- col.// -->
-							
+
 						</div> <!-- row.// -->
 					</article> <!-- itemlist.// -->
 				</div> <!-- card.// -->

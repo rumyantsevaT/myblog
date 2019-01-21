@@ -1,6 +1,6 @@
 <?php
 
-$pdo = new PDO ("mysql:host=localhost;dbname=myblog.loc;charset=utf8", "root", "root");
+$pdo = new PDO ("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
 //$sql = "SELECT * FROM breeds WHERE id=:id";
 $statement = $pdo->prepare("SELECT * FROM breeds WHERE id=:id");
 $statement->bindParam(":id", $_GET['id']);
@@ -28,14 +28,14 @@ $breed = $statement->fetch(PDO::FETCH_ASSOC);
 <!--header navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav-custom sticky-top">
 	<div class="container">
-		<a class="navbar-brand navbar-brand-custom" href="/myblog.loc">Rumyantseva-blog</a>
+		<a class="navbar-brand navbar-brand-custom" href="/">Rumyantseva-blog</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarText">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item dropdown active">
-					<a class="nav-link dropdown-toggle" href="/myblog.loc" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Все породы собак<span class="sr-only">(current)</span>
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -75,7 +75,7 @@ $breed = $statement->fetch(PDO::FETCH_ASSOC);
 		<!-- /.row -->
 		<div class="row">
 			<div class="col-12">
-				<a class="btn btn-custom" href="/myblog.loc">На главную</a>
+				<a class="btn btn-custom" href="/">На главную</a>
 			</div>
 		</div>
 		<!--.row-->
