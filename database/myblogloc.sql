@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost:3306
--- Время создания: Янв 21 2019 г., 21:52
+-- Время создания: Янв 22 2019 г., 02:25
 -- Версия сервера: 5.5.42
 -- Версия PHP: 7.0.0
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `myblocloc`
+-- База данных: `myblogloc`
 --
 
 -- --------------------------------------------------------
@@ -36,16 +36,15 @@ CREATE TABLE `breeds` (
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` int(1) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `breeds`
 --
 
 INSERT INTO `breeds` (`id`, `title`, `short_content`, `content`, `category_id`, `author_id`, `image`, `date`, `status`) VALUES
-(43, 'Стаффордширский терер дурачок', '', 'Стаффордширский терер дурачок с cvv c', 0, 0, 'screen-7.jpg', '2019-01-15 21:54:49', 1),
-(45, 'Бультерьер', '', 'Описание этого розовоносого песика', 0, 0, 'bullterrier.jpg', '2019-01-15 21:58:18', 1),
-(48, 'Порода заглушка по умолчанию', '', 'Порода заглушка по умолчанию когда будет валидация то она будет установлена если другая картинка не загружена\r\n 777', 0, 0, 'deactiv_hid_400.gif', '2019-01-15 22:05:06', 1);
+(45, 'Бультерьер', '', 'Описание этого розовоносого песика )', 0, 0, 'bullterrier.jpg', '2019-01-15 21:58:18', 1),
+(50, 'Стаффордширский терер дурачок', '', 'Стаффордширский терер дурачокСтаффордширский терер дурачокСтаффордширский терер дурачокСтаффордширский терер дурачокСтаффордширский терер дурачок', 0, 0, 'screen-7.jpg', '2019-01-21 21:58:46', 1);
 
 -- --------------------------------------------------------
 
@@ -96,11 +95,18 @@ INSERT INTO `posts` (`id`, `title`, `text`) VALUES
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_visit` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
+(1, 'миими', 'zakachai@list.ru', 'sxxs'),
+(2, 'миими', 'zakachai@list.ru', '222');
 
 --
 -- Индексы сохранённых таблиц
@@ -138,7 +144,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `breeds`
 --
 ALTER TABLE `breeds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=51;
 --
 -- AUTO_INCREMENT для таблицы `breeds_category`
 --
@@ -153,7 +159,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
