@@ -25,19 +25,19 @@
 								<label class="custom-file-label" for="inputGroupFile04">Выберите файл</label>
 							</div>
 						</div>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<label class="input-group-text" for="inputGroupSelect02">Размер породы</label>
-							</div>
-							<select class="custom-select" id="inputGroupSelect02">
-								<option selected>Гигантская </option>
-								<option value="1">Большая </option>
-								<option value="2">Средняя </option>
-								<option value="3">Маленькая </option>
-								<option value="3">Микро </option>
-							</select>
-
-						</div>
+<!--						<div class="input-group mb-3">-->
+<!--							<div class="input-group-prepend">-->
+<!--								<label class="input-group-text" for="inputGroupSelect02">Размер породы</label>-->
+<!--							</div>-->
+<!--							<select class="custom-select" id="inputGroupSelect02">-->
+<!--								<option selected>Гигантская </option>-->
+<!--								<option value="1">Большая </option>-->
+<!--								<option value="2">Средняя </option>-->
+<!--								<option value="3">Маленькая </option>-->
+<!--								<option value="3">Микро </option>-->
+<!--							</select>-->
+<!---->
+<!--						</div>-->
 						<button type="submit" class="btn btn-custom">Отправить</button>
 					</form>
 				</div>

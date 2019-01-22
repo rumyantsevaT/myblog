@@ -9,7 +9,8 @@
 
 //1) Соединиться с бд
 //$pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
-require_once "pdo-db.php";
+require_once "database/pdo-db.php";
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // 2)sql запрос -запись в базу данных значения из формы со страницы create.php
 $sql = "INSERT INTO breeds (title, content, image) VALUES (:title, :content, :image)";
 $statement = $pdo->prepare($sql);
@@ -26,4 +27,4 @@ function uploadImage($image_file){
 
 uploadImage($_FILES['image']);
 
-header("Location: /");
+header("Location: /");exit;

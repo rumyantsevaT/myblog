@@ -1,23 +1,24 @@
 <?php
 session_start();
+$_SESSION['login'] = $_POST['username'];
 
-if(isset($_POST['name']) && (!empty($_POST['name']))) {
-	$name = $_POST['name'];
-	setcookie('name', $name);
-} else {
+//if(isset($_POST['username']) && (!empty($_POST['username']))) {
+//	$name = $_POST['username'];
+//	setcookie('username', $name);
+//} else {
 //	$name = 'Гость';
-}
+//}
 
 ?>
 
 <!doctype html>
 <html lang="ru">
 <!--<head>-->
-<?php include "./web/head.html"; ?>
+<?php include "web/head.html"; ?>
 
 <body>
 <!--header navigation-->
-<?php include "./web/nav.html"; ?>
+<?php include "web/nav.html"; ?>
 
 <div class="section section-main">
 	<div class="container">

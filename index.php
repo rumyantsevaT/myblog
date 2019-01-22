@@ -2,7 +2,7 @@
 // Список постов
 //var_dump($_POST);
 //$pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
-require_once "pdo-db.php";
+require_once "database/pdo-db.php";
 $sql = "SELECT * FROM breeds";
 $statement = $pdo->prepare($sql);
 $statement->execute();

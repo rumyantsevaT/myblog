@@ -1,15 +1,19 @@
 <?php
+session_start();
 //личный кабинет где выводятся все посты одного автора (того кто залогинился)
 
-//$pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
-require_once "pdo-db.php";
-//$sql = "SELECT * FROM breeds WHERE id=:id";
-//$statement = $pdo->prepare("INSERT INTO users (name, password) VALUE (:name, :password"));
+require_once "database/pdo-db.php";
+$sql = "SELECT * FROM breeds WHERE id=:id";
+$statement = $pdo->prepare($sql);
+$statement->execute();
+$breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
 <!doctype html>
 <html lang="ru">
 <!--head-->
-<?php include "./web/head.html"; ?>
+<?php include "web/head.html"; ?>
 <body>
 <!--навигация-->
 <?php include "web/nav-logout.html"; ?>
@@ -29,7 +33,7 @@ require_once "pdo-db.php";
 	<div class="container">
 		<div class="row justify-content-between">
 			<div class="col-4">
-				<h1 class="d-inline"><p>Привет, <?= $name;?></p></h1>
+				<h1 class="d-inline"><p>Привет, <?= $breeds['title'];?></p></h1>
 			</div>
 			<div class="col-4 align-self-end text-right">
 				<a class="btn btn-custom" href="create.php">Добавить породу</a>
@@ -72,28 +76,28 @@ require_once "pdo-db.php";
 			<!-- /.col-md-3 -->
 			<div class="col-lg-9">
 			<!--карточка -->
-				<?php foreach ($breeds as $breed):?>
+				<?php foreach ($users as $user):?>
 				<div class="card mb-4">
 					<article class="itemlist">
 						<div class="row row-sm">
 							<aside class="col-sm-5">
 								<div class="img-wrap">
-									<img class="img-md" src="uploads/<?= $breed['image'];?>">
+									<img class="img-md" src="uploads/<?= $user['image'];?>">
 								</div>
 							</aside> <!-- col.// -->
 							<div class="col-sm-7">
 								<div class="text-wrap">
-									<h4 class="title"><?= $breed['title']?></h4>
-									<p><?= $breed['content']?></p>
+									<h4 class="title"><?= $user['title']?></h4>
+									<p><?= $user['content']?></p>
 									<p class="rating-wrap my-3 text-muted">
-										<span class="label-rating"><i class="far fa-clock mr-1"></i><?= $breed['date']?></span>
+										<span class="label-rating"><i class="far fa-clock mr-1"></i><?= $user['date']?></span>
 										<span class="label-rating">|</span>
 										<span class="label-rating"><i class="far fa-user mr-1"></i>Татьяна</span>
 									</p> <!-- rating-wrap.// -->
 									<div class="border-top pt-3">
-										<a href="/details.php?id=<?= $breed['id'];?>" class="btn btn-custom"> Подробнее  </a>
-										<a href="/edit.php?id=<?= $breed['id'];?>" class="btn btn-warning"> Редактировать </a>
-										<a href="/delete.php?id=<?= $breed['id'];?>" class="btn btn-danger"> Удалить  </a>
+										<a href="/details.php?id=<?= $user['id'];?>" class="btn btn-custom"> Подробнее  </a>
+										<a href="/edit.php?id=<?= $user['id'];?>" class="btn btn-warning"> Редактировать </a>
+										<a href="/delete.php?id=<?= $user['id'];?>" class="btn btn-danger"> Удалить  </a>
 									</div> <!-- action-wrap.// -->
 								</div> <!-- text-wrap.// -->
 							</div> <!-- col.// -->
