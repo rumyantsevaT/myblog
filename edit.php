@@ -17,7 +17,7 @@ $breed = $statement->fetch(PDO::FETCH_ASSOC);
 <div class="section py-5">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-8 offset-md-2">
 				<h1>Редактировать породу собаки</h1>
 				<form action="update.php?id=<?= $breed['id'];?>" method="POST">
 <!--					<input type="text" name="id" value="--><?//= $breed['id'];?><!--">-->

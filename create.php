@@ -8,7 +8,7 @@
 <div class="section py-5">
 	<div class="container">
 		<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-8  offset-md-2">
 					<h1>Добавить породу собаки</h1>
 					<form action="catcher.php" method="POST" enctype="multipart/form-data">
 						<div class="form-group">

@@ -3,12 +3,10 @@ session_start();
 
 require_once 'database/pdo-db.php';
 //Все породы которые добавил пользователь
-$sql = "SELECT * FROM breeds WHERE user_id=:user_id";
+$sql = "SELECT * FROM breeds";
 $statement = $pdo->prepare($sql);
-
-
-
-
+$statement->execute();
+$breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!doctype html>
@@ -70,30 +68,20 @@ $statement = $pdo->prepare($sql);
 					<thead>
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col">First</th>
-						<th scope="col">Last</th>
-						<th scope="col">Handle</th>
+						<th scope="col">Порода</th>
+						<th scope="col">Краткое описание</th>
+						<th scope="col">Миниатюра</th>
 					</tr>
 					</thead>
 					<tbody>
+					<?php foreach($breeds as $breed): ?>
 					<tr>
-						<th scope="row">1</th>
-						<td>Mark</td>
-						<td>Otto</td>
+						<th scope="row"><?= $breed['id']; ?></th>
+						<td><?= $breed['title']; ?></td>
+						<td><?= $breed['short_content']; ?></td>
 						<td>@mdo</td>
 					</tr>
-					<tr>
-						<th scope="row">2</th>
-						<td>Jacob</td>
-						<td>Thornton</td>
-						<td>@fat</td>
-					</tr>
-					<tr>
-						<th scope="row">3</th>
-						<td>Larry</td>
-						<td>the Bird</td>
-						<td>@twitter</td>
-					</tr>
+					<?php endforeach; ?>
 					</tbody>
 				</table>
 				
