@@ -9,6 +9,7 @@ $statement->execute();
 $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 //var_dump($name_img);die;
+
 ?>
 
 <!doctype html>

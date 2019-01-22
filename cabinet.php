@@ -1,13 +1,5 @@
 <?php
 session_start();
-//личный кабинет где выводятся все посты одного автора (того кто залогинился)
-
-require_once "database/pdo-db.php";
-$sql = "SELECT * FROM breeds WHERE id=:id";
-$statement = $pdo->prepare($sql);
-$statement->execute();
-$breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
-
 
 ?>
 <!doctype html>
@@ -33,7 +25,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 	<div class="container">
 		<div class="row justify-content-between">
 			<div class="col-4">
-				<h1 class="d-inline"><p>Привет, <?= $breeds['title'];?></p></h1>
+				<h1 class="d-inline"><p>Привет, <?php echo $_COOKIE['username'] ; ?></p></h1>
 			</div>
 			<div class="col-4 align-self-end text-right">
 				<a class="btn btn-custom" href="create.php">Добавить породу</a>

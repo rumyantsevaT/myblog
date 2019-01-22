@@ -1,10 +1,19 @@
 <?php
-session_start();
+//session_start();
 //var_dump($_SESSION, $_COOKIE);die;
 //ловим пользователя
+
+if(isset($_POST['username']) && (!empty($_POST['username']))) {
+	$username = $_POST['username'];
+	setcookie('username', $username);
+} elseif ( isset($_COOKIE['username']) ) {
+	$username = $_COOKIE['username'];
+} else {
+	$username = 'Гость';
+}
 //подключаем бд
 require_once "database/pdo-db.php";
-//var_dump($_POST);
+
 //$pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
