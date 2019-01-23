@@ -1,10 +1,31 @@
 <?php
 session_start();
 
-//$_SESSION['login'] = $_POST['username'];
+//if ( isset($_SESSION['login'])  &&  !empty($_SESSION['login']) ) {
+//	$login = $_SESSION['login'];
+//	echo $login;
+//}
 
+if ( isset($_COOKIE['login']) ) {
+	$login = $_COOKIE['login'];
+} else {
+	$login = 'Гость';
+}
+//подключаем бд
+require_once "database/pdo-db.php";
 
+//$pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
+$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "INSERT INTO users (login, email, password) VALUES (:login, :email, :password)";
+$statement = $pdo->prepare($sql);
+$statement->bindParam(":login", $_POST['login']);
+$statement->bindParam(":email", $_POST['email']);
+$statement->bindParam(":password", $password);
+$statement->execute();
+//var_dump($password);die;
+//header("Location: /cabinet.php");
 ?>
 <!doctype html>
 <html lang="ru">
@@ -19,10 +40,12 @@ session_start();
 	<div class="container">
 		<div class="form-wrap">
 			<h1>Регистрация</h1>
+			<p>Привет, <?php echo $_SESSION['login']; ?></p>
 			<form action="registration.php" class="m-auto" method="POST">
+<!--			<form action="signup.php" class="m-auto" method="POST">-->
 				<div class="form-group">
 					<label for="inputName">Имя</label>
-					<input type="text" name="username" class="form-control" id="inputName" placeholder="Как к вам обращаться?">
+					<input type="text" name="login" class="form-control" id="inputName" placeholder="Как к вам обращаться?">
 				</div>
 				<div class="form-group">
 					<label for="exampleInputEmail1">Email </label>
@@ -35,7 +58,7 @@ session_start();
 				</div>
 				<button name="do_signup" type="submit" class="btn btn-custom">Зарегистрироваться</button>
 				<div class="my-4">
-					<p>Уже зарегистрированы? Авторизуйтесь <a href="login.php">Вход</a></p>
+					<p>Уже зарегистрированы? <a href="login.php">Авторизуйтесь</a></p>
 				</div>
 			</form>
 		</div>

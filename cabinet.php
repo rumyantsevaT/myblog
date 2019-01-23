@@ -1,12 +1,12 @@
 <?php
 session_start();
-
 require_once 'database/pdo-db.php';
 //Все породы которые добавил пользователь
 $sql = "SELECT * FROM breeds";
 $statement = $pdo->prepare($sql);
 $statement->execute();
 $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
+
 
 ?>
 <!doctype html>
@@ -32,7 +32,7 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 	<div class="container">
 		<div class="row justify-content-between">
 			<div class="col-4">
-				<h1 class="d-inline"><p>Привет, <?php echo $_COOKIE['username'] ; ?></p></h1>
+				<h1 class="d-inline"><p>Привет, <?= $_SESSION['login'];?></p></h1>
 			</div>
 			<div class="col-4 align-self-end text-right">
 				<a class="btn btn-custom" href="create.php">Добавить породу</a>
@@ -68,54 +68,22 @@ $breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
 					<thead>
 					<tr>
 						<th scope="col">#</th>
+						<th scope="col">Миниатюра</th>
 						<th scope="col">Порода</th>
 						<th scope="col">Краткое описание</th>
-						<th scope="col">Миниатюра</th>
 					</tr>
 					</thead>
 					<tbody>
 					<?php foreach($breeds as $breed): ?>
 					<tr>
 						<th scope="row"><?= $breed['id']; ?></th>
+						<td ><img width="150px" class="img-md" src="uploads/<?= $breed['image'];?>"></td>
 						<td><?= $breed['title']; ?></td>
 						<td><?= $breed['short_content']; ?></td>
-						<td>@mdo</td>
 					</tr>
 					<?php endforeach; ?>
 					</tbody>
 				</table>
-				
-			<!--карточка -->
-<!--				--><?php //foreach ($users as $user):?>
-<!--				<div class="card mb-4">-->
-<!--					<article class="itemlist">-->
-<!--						<div class="row row-sm">-->
-<!--							<aside class="col-sm-5">-->
-<!--								<div class="img-wrap">-->
-<!--									<img class="img-md" src="uploads/--><?//= $user['image'];?><!--">-->
-<!--								</div>-->
-<!--							</aside> <!-- col.// -->-->
-<!--							<div class="col-sm-7">-->
-<!--								<div class="text-wrap">-->
-<!--									<h4 class="title">--><?//= $user['title']?><!--</h4>-->
-<!--									<p>--><?//= $user['content']?><!--</p>-->
-<!--									<p class="rating-wrap my-3 text-muted">-->
-<!--										<span class="label-rating"><i class="far fa-clock mr-1"></i>--><?//= $user['date']?><!--</span>-->
-<!--										<span class="label-rating">|</span>-->
-<!--										<span class="label-rating"><i class="far fa-user mr-1"></i>Татьяна</span>-->
-<!--									</p> <!-- rating-wrap.// -->-->
-<!--									<div class="border-top pt-3">-->
-<!--										<a href="/details.php?id=--><?//= $user['id'];?><!--" class="btn btn-custom"> Подробнее  </a>-->
-<!--										<a href="/edit.php?id=--><?//= $user['id'];?><!--" class="btn btn-warning"> Редактировать </a>-->
-<!--										<a href="/delete.php?id=--><?//= $user['id'];?><!--" class="btn btn-danger"> Удалить  </a>-->
-<!--									</div> <!-- action-wrap.// -->-->
-<!--								</div> <!-- text-wrap.// -->-->
-<!--							</div> <!-- col.// -->-->
-<!---->
-<!--						</div> <!-- row.// -->-->
-<!--					</article> <!-- itemlist.// -->-->
-<!--				</div> <!-- card.// -->-->
-<!--				--><?php //endforeach;?>
 			</div>
 			<!-- /.col-md-9 -->
 		</div>

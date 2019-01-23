@@ -1,11 +1,6 @@
 <?php
+session_start();
 
-function dd($data) {
-	echo '<pre>';
-		var_dump($data);
-	echo '<pre>';
-	die;
-}
 // Список постов
 //$pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
 require_once "database/pdo-db.php";

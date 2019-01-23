@@ -1,30 +1,29 @@
 <?php
-//session_start();
-//var_dump($_SESSION, $_COOKIE);die;
+session_start();
 //ловим пользователя
 
-if(isset($_POST['username']) && (!empty($_POST['username']))) {
-	$username = $_POST['username'];
-	setcookie('username', $username);
-} elseif ( isset($_COOKIE['username']) ) {
-	$username = $_COOKIE['username'];
+if( isset($_POST['login']) && (!empty($_POST['login']))) {
+	$login = $_POST['login'];
+	setcookie('login', $login);
+} elseif ( isset($_COOKIE['login']) ) {
+	$login = $_COOKIE['login'];
 } else {
-	$username = 'Гость';
+	$login = 'Гость';
 }
 //подключаем бд
 require_once "database/pdo-db.php";
 
 //$pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
+//хешируем пароль
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "INSERT INTO users (login, email, password) VALUES (:login, :email, :password)";
 $statement = $pdo->prepare($sql);
-$statement->bindParam(":username", $_POST['username']);
+$statement->bindParam(":login", $_POST['login']);
 $statement->bindParam(":email", $_POST['email']);
 $statement->bindParam(":password", $password);
 $statement->execute();
-//var_dump($password);die;
 
 header("Location: /cabinet.php");
 
