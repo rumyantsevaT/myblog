@@ -1,0 +1,6 @@
+{
+	"require": {
+		"delight-im/auth": "v8.1.0",
+		"nikic/fast-route": "^1.3"
+	}
+}
