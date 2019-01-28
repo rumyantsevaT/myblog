@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$login = $_POST['login'];
+var_dump($login);
 //if ( isset($_SESSION['login'])  &&  !empty($_SESSION['login']) ) {
 //	$login = $_SESSION['login'];
 //	echo $login;

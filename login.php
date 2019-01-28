@@ -1,5 +1,6 @@
 <?php
 session_start();
+var_dump($_SESSION);die;
 //Если форма авторизации отправлена...
 if ( isset($_COOKIE['login']) ) {
 	$login = $_COOKIE['login'];
