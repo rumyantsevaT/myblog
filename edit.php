@@ -1,4 +1,9 @@
 <?php
+require "./database/QueryBuilder.php";
+
+$db = new QueryBuilder();
+
+
 $pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
 $statement = $pdo->prepare("SELECT * FROM breeds WHERE id=:id");
 $statement->bindParam(":id", $_GET['id']);

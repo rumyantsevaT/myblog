@@ -3,13 +3,10 @@ session_start();
 
 // Список постов
 //$pdo = new PDO("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
-require_once "database/pdo-db.php";
-$sql = "SELECT * FROM breeds";
-$statement = $pdo->prepare($sql);
-$statement->execute();
-$breeds = $statement->fetchAll(PDO::FETCH_ASSOC);
+require "./database/QueryBuilder.php";
 
-//var_dump($name_img);die;
+$db = new QueryBuilder();
+$breeds = $db->all("breeds");
 
 ?>
 

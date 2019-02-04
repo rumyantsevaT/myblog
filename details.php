@@ -1,13 +1,11 @@
 <?php
+//подключаем QueryBuilder
+require "./database/QueryBuilder.php";
 
-$pdo = new PDO ("mysql:host=localhost;dbname=myblogloc;charset=utf8", "root", "root");
-//$sql = "SELECT * FROM breeds WHERE id=:id";
-$statement = $pdo->prepare("SELECT * FROM breeds WHERE id=:id");
-$statement->bindParam(":id", $_GET['id']);
-$statement->execute();
-$breed = $statement->fetch(PDO::FETCH_ASSOC);
-//var_dump($result);
+$db = new QueryBuilder();
 
+$id = $_GET['id'];
+$breed = $db->getOneById("breeds", $id);
 ?>
 <!doctype html>
 <html lang="ru">
